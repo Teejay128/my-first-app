@@ -1,4 +1,5 @@
 const express = require('express');
+const dbConnection = require('./dbConnection');
 
 const app = express();
 
@@ -8,7 +9,7 @@ app.get('/', (req, res) => {
     res.send('Xup Bitches');
 });
 
-
+dbConnection();
 
 app.listen(PORT, () => {
     console.log("Server is up and running at localhost:port", PORT);
